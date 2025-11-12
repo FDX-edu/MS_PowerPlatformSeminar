@@ -4,7 +4,7 @@
 
 | 시간 | 챕터             | 내용                                         |
 | -- | -------------- | ------------------------------------------ |
-| 1  | Power Automate | Power Automate 기본 설명<br>(메일 연동 관련내용 - 구상중) |
+| 1  | Power Automate | Power Automate 기본 설명<br>(메일 연동 관련내용 or Sharepoint 관련내용 - 구상중) |
 |  | 휴식               |                                            |
 | 2  | Power Automate | 네이버 뉴스 API를 요약하여 Teams 메시지 보내기             |
 |  | 휴식               |                                            |
