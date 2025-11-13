@@ -1,0 +1,104 @@
+## 4. 커넥터 호출
+
+### 1. 도구(Action)
+
+도구는 다음 핵심 작업 유형 중 하나를 기반으로 합니다.
+- 사전 빌드된 커넥터 작업
+- 사용자 지정 커넥터 작업
+- Power Automate 클라우드 흐름
+- AI Builder 프롬프트
+- Bot Framework 기술
+  
+각 핵심 작업에는 목적을 설명하는 추가 정보가 있어 에이전트가 생성 AI를 사용하여 질문을 생성할 수 있습니다. 따라서 필요한 모든 입력을 수집하기 위해 질문 노드를 수동으로 작성할 필요가 없습니다.
+
+작업은 작업 결과를 사용하여 사용자의 쿼리에 대한 상황적 응답을 생성할 수 있습니다.
+
+
+### 2. 작업 만들기
+
+1. 탐색에서 **도구** 탭으로 이동하여 **도구 추가**를 선택합니다.
+
+   <img src="https://github.com/user-attachments/assets/b76891f8-c6ee-468e-bb71-49c1f7824df8" width=600/>
+
+3. **오늘 예보 가져오기** 커넥터를 선택합니다. </br>
+    **오늘 예보 가져오기**가 보이지 않으면 검색창에 먼저 검색합니다.
+   ```
+   오늘 예보 가져오기
+   ```
+
+   <img src="https://github.com/user-attachments/assets/a5eeb8b2-0791-4695-afd5-c9069e9e394e" width=800/>
+
+4. **연결이 자동으로 생성**될 때까지 기다립니다.
+   
+   <img src="https://github.com/user-attachments/assets/8c41220f-7ec2-4ccb-9603-9d724533f5f2" width=800/>
+
+6. 도구의 **이름**을 설정합니다.
+   ```
+   오늘 예보 가져오기
+   ```
+  
+   **[이 작업을 사용할 때를 아는 에이전트에 대한 설명]** 에 "**한글로 대답합니다**"를 추가합니다.
+   ```
+   한글로 대답합니다.
+   ```
+   
+   <img src="https://github.com/user-attachments/assets/e2963b7d-dbdb-40d7-9d6d-c33ee8aa1020" width=800/>
+
+9. **[최종 사용자 인증]** 에서 **Copilot 작성자 인증**을 선택합니다. </br>
+   이렇게 하면 에이전트가 날씨 커넥터를 사용할 때 최종 사용자 연결을 사용하지 않고도 작업할 수 있습니다.
+
+   <img src="https://github.com/user-attachments/assets/cb673ba3-74f9-407c-bef3-c538628c8379" width=500/>
+
+10. **[입력 및 출력]** 을 클릭하여 메뉴를 확장합니다. </br>
+    Location(위치) 속성은 그대로 둡니다.</br>
+    **Units(단위)** 속성을 선택합니다.
+
+    <img src="https://github.com/user-attachments/assets/28a4e52a-1817-453e-badb-8f0f9931e1f7" width=500/>
+
+12. **[이 입력을 에이전트가 어떻게 채웁니까?]** 를 **값으로 설정**을 선택합니다.
+
+    <img src="https://github.com/user-attachments/assets/0467ddcc-7871-4801-b889-d3f8d98288d9" width=500/>
+
+11. **값**은 **Metric**을 선택합니다.
+    
+    <img src="https://github.com/user-attachments/assets/698e3595-30f2-46a0-8caf-eb0dc6a84f96" width=500/>
+
+13. **완료**를 선택한 뒤, **작업 추가**를 클릭하여 추가를 마무리합니다.
+    
+    <img src="https://github.com/user-attachments/assets/e78399e0-2f24-4127-a1af-e05f8ba51392" width=800/>
+
+
+### 3. 도구 테스트
+
+1. 테스트 창으로 이동합니다.
+
+2. 에이전트에게 다음과 같이 질문합니다.
+   
+   ```
+   날씨는 어때요?
+   ```
+
+3. 에이전트가 질문과 답변 프롬프트를 어떻게 해석하는지 확인할 수 있는 **활동 지도**가 자동으로 활성화됩니다.</br>
+   에이전트가 지역에 대한 입력이 없는 것을 확인하고 사용자에게 지역을 질문하는 메시지를 생성하였습니다.
+
+   <img src="https://github.com/user-attachments/assets/a4210712-72bb-4fc4-bed2-1bce1431dd4c" width=800/>
+
+5. 임의의 도시로 답변해 보겠습니다.
+
+   ```
+   서울
+   ```
+
+6. 에이전트가 자동으로 입력받은 도시로 업데이트하고 답변을 제공하는 것을 확인할 수 있습니다.
+
+   <img src="https://github.com/user-attachments/assets/7906db57-b429-4319-9982-041e27edb830" width=800/>
+
+8. 쿼리를 변경합니다.
+
+   ```
+   런던의 날씨를 알고 싶어요. 또한 모든 정보를 요점으로 나열해 주세요.
+   ```
+
+9. 에이전트가 커넥터에 대한 쿼리를 어떻게 업데이트하는지, 모든 정보를 나열하라는 지침에 어떻게 반응하는지를 확인합니다.
+
+   <img src="https://github.com/user-attachments/assets/8bdc73f2-c944-478a-bf1f-eb739af8903e" width=800/>
